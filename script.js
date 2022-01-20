@@ -33,11 +33,11 @@ window.addEventListener('keydown', (e) => {
 
 function startGame() {
     // paddle handler
-    window.addEventListener('keypress', (e) => {
-        if (e.key == 'a' && currX > 0) {
+    window.addEventListener('keydown', (e) => {
+        if ((e.key == 'a' || e.key == 'ArrowLeft') && currX > 0) {
             currX -= speed;
         }
-        if (e.key == 'd' && currX < maxX) {
+        if ((e.key == 'd' || e.key =='ArrowRight') && currX < maxX) {
             currX += speed;
         }
         p1.style.left = currX + "px";
